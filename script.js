@@ -15,7 +15,7 @@ async function init() {
     // const widthSize = window.innerWidth/2;
     // const heightSize = window.innerHeight;
 
-    const widthSize = 540;
+    const widthSize = 580;
     const heightSize = 480;
 
     const flip = true; // whether to flip the webcam
