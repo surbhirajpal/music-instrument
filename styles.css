@@ -25,24 +25,35 @@ body, html {
     height: 100vh;
 }
 
+.instructions{
+    /* display: none; */
+}
+
 .device{
-    position: absolute;
+    /* position: absolute;
     right: 0;
-    bottom: -300px;
-    width: 1100px;
+    bottom: -300px; */
+    width: 80%;
     height: auto;
 }
 
 .camera-holder{
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    background-image: url(images/device-bg.jpg);
+    padding-bottom: 72%;
+    width: 70%;
+    margin-bottom: -22%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }
 
 .canvas{
     position: absolute;
-    left: 695px;
-    top: 150px;
+    left: 36%;
+    top: 9%;
     border-radius: 50px;
     overflow: hidden;
+    width: 49%;
+    height: 37%;
 }

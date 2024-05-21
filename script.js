@@ -15,8 +15,8 @@ async function init() {
     // const widthSize = window.innerWidth/2;
     // const heightSize = window.innerHeight;
 
-    const widthSize = 580;
-    const heightSize = 480;
+    const widthSize = 700;
+    const heightSize = 500;
 
     const flip = true; // whether to flip the webcam
     webcam = new tmPose.Webcam(widthSize, heightSize, flip); // width, height, flip
