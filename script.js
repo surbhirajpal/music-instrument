@@ -12,11 +12,11 @@ async function init() {
     maxPredictions = model.getTotalClasses();
 
     // Convenience function to setup a webcam
-    const widthSize = window.innerWidth;
-    const heightSize = window.innerHeight;
+    // const widthSize = window.innerWidth/2;
+    // const heightSize = window.innerHeight;
 
-    // const widthSize = 1800;
-    // const heightSize = 1000;
+    const widthSize = 540;
+    const heightSize = 480;
 
     const flip = true; // whether to flip the webcam
     webcam = new tmPose.Webcam(widthSize, heightSize, flip); // width, height, flip
@@ -34,8 +34,8 @@ async function init() {
         labelContainer.appendChild(document.createElement("div"));
     }
 
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    // window.addEventListener('resize', resizeCanvas);
+    // resizeCanvas();
 }
 
 async function loop(timestamp) {
