@@ -2,6 +2,7 @@ const URL = "./my_model/";
 let model, webcam, ctx, labelContainer, maxPredictions;
 
 let previousActiveGesture = null;
+let selectedIntrument = 'piano';
 
 async function init() {
     const modelURL = URL + "model.json";
@@ -76,23 +77,38 @@ async function predict() {
 
 function playMusic(pose) {
     const audio = new Audio();
-
-    if (pose === 'pose1') {
-        audio.src = './tracks/audio_1.mp3';
-    } else if (pose === 'pose2') {
-        audio.src = './tracks/audio_2.mp3';
-    } else if (pose === 'pose3') {
-        audio.src = './tracks/audio_3.mp3';
-    } else if (pose === 'pose4') {
-        audio.src = './tracks/audio_4.mp3';
-    } else if (pose === 'pose5') {
-        audio.src = './tracks/audio_5.mp3';
-    } else if (pose === 'pose6') {
-        audio.src = './tracks/audio_6.mp3';
+    if (selectedIntrument === 'piano') {
+        if (pose === 'pose1') {
+            audio.src = './tracks/piano-1.wav';
+        } else if (pose === 'pose2') {
+            audio.src = './tracks/piano-2.wav';
+        } else if (pose === 'pose3') {
+            audio.src = './tracks/piano-3.wav';
+        } else if (pose === 'pose4') {
+            audio.src = './tracks/piano-4.wav';
+        } else if (pose === 'pose5') {
+            audio.src = './tracks/piano-5.wav';
+        } else if (pose === 'pose6') {
+            audio.src = './tracks/piano-6.wav';
+        }
+    } else if (selectedIntrument === 'guitar') {
+        if (pose === 'pose1') {
+            audio.src = './tracks/guitar-1.wav';
+        } else if (pose === 'pose2') {
+            audio.src = './tracks/guitar-2.wav';
+        } else if (pose === 'pose3') {
+            audio.src = './tracks/guitar-3.wav';
+        } else if (pose === 'pose4') {
+            audio.src = './tracks/guitar-4.wav';
+        } else if (pose === 'pose5') {
+            audio.src = './tracks/guitar-5.wav';
+        } else if (pose === 'pose6') {
+            audio.src = './tracks/guitar-6.wav';
+        }
     }
 
     console.log('audio', audio)
-    // audio.play();
+    audio.play();
 }
 
 function drawPose(pose) {
@@ -112,4 +128,8 @@ function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     ctx = canvas.getContext("2d");
+}
+
+function setInstrument(selected) {
+    selectedIntrument = selected;
 }
